@@ -1,0 +1,7 @@
+{
+  "name": "JsonStreamingParser",
+  "author": "Nick Thomson <particledev@undergrid.org.uk>",
+  "license": "MIT",
+  "version": "1.0.4.1",
+  "description": "A very memory efficient library to parse (large) JSON objects on embedded devices"
+}
