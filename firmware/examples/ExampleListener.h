@@ -1,7 +1,7 @@
 #pragma once
 
 #include "application.h"
-#include "JsonListener.h"
+#include "JsonStreamingParser/JsonListener.h"
 
 class ExampleListener: public JsonListener {
 
