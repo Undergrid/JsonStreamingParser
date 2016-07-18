@@ -39,7 +39,45 @@ console when they are called.
 
 #include "JsonStreamingParser/JsonStreamingParser.h"
 #include "JsonStreamingParser/JsonListener.h"
-#include "ExampleListener.h"
+
+class ExampleListener: public JsonListener {
+
+  public:
+    void whitespace(char c) {
+        Serial.println("whitespace");
+    }
+    
+    void value(String key, String value) {
+      Serial.print("key: " + key + ", ");
+      Serial.println("value: " + value);
+    }
+    
+    void startDocument() {
+      Serial.println("start document");
+    }
+    
+    void endDocument() {
+      Serial.println("end document. ");
+    }
+    
+    void startArray(String key) {
+       Serial.print("start array: ");
+       Serial.println(key);
+    }
+    
+    void endArray() {
+      Serial.println("end array. ");
+    }
+    
+    void startObject(String key) {
+       Serial.print("start object:");
+       Serial.println(key);
+    }
+    
+    void endObject() {
+      Serial.println("end object. ");
+    }
+};
 
 JsonStreamingParser parser;
 ExampleListener listener;
