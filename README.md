@@ -6,13 +6,13 @@ This library is a modified fork of Squix78's json-streaming-parser (https://gith
 
 ## Changes from Squix78's version:
 
-1) Layout changed so it could be deployed as a particle library.
-2) Only one startDocument will be raised at the start of a document rather than one for each non-json character (so it will ignore HTTP headers for example).
-3) Keys are now passed to the listener as part of the startObject(), startArray() or value() event they are associated with rather than as seperate events.
+* Layout changed so it could be deployed as a particle library.
+* Only one startDocument will be raised at the start of a document rather than one for each non-json character (so it will ignore HTTP headers for example).
+* Keys are now passed to the listener as part of the startObject(), startArray() or value() event they are associated with rather than as separate events.
 
 ## Why yet another JSON parser?
 
-Many people use Particle webhooks for parsing large JSON files, but sometimes your stuck behind a a corporate firewall or corporate policy won't allow you to send data to an off-site webservice and you have to do everything locally.  
+Many people use Particle webhooks for parsing large JSON files, but sometimes your stuck behind a corporate firewall or corporate policy won't allow you to send data to an off-site webservice and you have to do everything locally.  
 
 Large JSON strings can quickly become a problem and if there's no way to limit the data the server is sending you, you need a streaming parser like this one to help you out.
 
@@ -26,7 +26,7 @@ Generally speaking when parsing data you have two options to make sense of this 
 
 ## How to use
 
-This is a streaming parser, which means that you feed a stream of chars into the parser and you take out from that stream whatever you are interested in. In order to do that you will create a subclass of JsonListener class and implement methods which will be notified in case of certain events in the feed occure. Available events are:
+This is a streaming parser, which means that you feed a stream of chars into the parser and you take out from that stream whatever you are interested in. In order to do that you will create a subclass of JsonListener class and implement methods which will be notified in case of certain events in the feed occur. Available events are:
 
 * startDocument()
 * endDocument()
@@ -44,11 +44,9 @@ This code is available under the MIT license, which basically means that you can
 
 ## Credits
 
-First of all I'd like to thank Squix78 and Salsify for making their parsers available to the public. 
+First of all I'd like to thank Squix78 and Salsify for making their parsers available to the public.
 
-You find their repositories here: 
+You find their repositories here:
 
-Squix78 - https://github.com/squix78/json-streaming-parser
-
-Salsify - https://github.com/salsify/jsonstreamingparser
-
+* Squix78 - https://github.com/squix78/json-streaming-parser
+* Salsify - https://github.com/salsify/jsonstreamingparser

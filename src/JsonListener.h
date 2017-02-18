@@ -21,15 +21,15 @@ See more at http://blog.squix.ch and https://github.com/squix78/json-streaming-p
 
 #pragma once
 
-#include "application.h"
+//#include "application.h"
 
 class JsonListener {
   private:
 
   public:
-    
+
     virtual void whitespace(char c) = 0;
-  
+
     virtual void startDocument() = 0;
 
     virtual void value(String key, String value) = 0;
@@ -43,5 +43,5 @@ class JsonListener {
     virtual void startArray(String key) = 0;
 
     virtual void startObject(String key) = 0;
- 
+
 };
